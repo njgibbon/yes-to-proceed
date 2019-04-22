@@ -9,7 +9,6 @@ function main
     echo ""
 }
 
-
 function checks
 {
     echo ""
@@ -22,8 +21,9 @@ function yes_to_proceed
 {
     echo ""
     echo "In yes_to_proceed()"
-    echo ""
-    read -p "Are you sure you want to continue? Enter \"yes\":  " answer
+    read -p "Are you sure you want to continue? Enter \"yes\":  
+    
+" answer
     echo ""
     if [ "$answer" == yes ] ;then
         echo "\"yes\" input."
