@@ -3,7 +3,12 @@ import sys
 def main():
     print("")
     checks()
-    yes_to_proceed()
+    print("Check if \"yes\" has been passed in as system arg.")
+    if (proceed_var == "yes"):
+        print("System arg 1 is \"yes\". Continue without interactive prompt.")
+    else:
+        print("System arg 1 is not \"yes\". Requires interactive prompt.")
+        yes_to_proceed()
     primary_logic()
     print("")
 
@@ -32,5 +37,9 @@ def primary_logic():
     print("Execute the primary logic of the script.")
     print("This function is only entered if \"yes\" was chosen.")
     print("")
+
+proceed_var="no"
+if (len(sys.argv) >= 2):
+    proceed_var=sys.argv[1]
 
 main()

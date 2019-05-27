@@ -4,7 +4,13 @@ function main
 {
     echo ""
     checks
-    yes_to_proceed
+    echo "Check if \"yes\" has been passed in as system arg."
+    if [ "$proceed_var" == yes ]; then
+        echo "System arg 1 is \"yes\". Continue without interactive prompt."
+    else
+        echo "System arg 1 is not \"yes\". Requires interactive prompt."
+        yes_to_proceed
+    fi
     primary_logic
     echo ""
 }
@@ -21,6 +27,7 @@ function yes_to_proceed
 {
     echo ""
     echo "In yes_to_proceed()"
+    echo ""
     read -p "Are you sure you want to continue? Enter \"yes\":  
     
 " answer
@@ -43,5 +50,7 @@ function primary_logic
     echo "This function is only entered if \"yes\" was chosen."
     echo ""
 }
+
+proceed_var=$1
 
 main
